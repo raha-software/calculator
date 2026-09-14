@@ -48,7 +48,7 @@ A simple command-line calculator written in Python — my first Python project. 
 Raha — software engineering student and developer.
 GitHub: https://github.com/raha-software
 
-## دربارهٔ این پروژه (فارسی)
+## دربارهٔ این پروژه
 
 این پروژه یک ماشین‌حساب ساده با پایتونه؛ اولین پروژهٔ پایتونیِ من.
 پیش از این چند پروژه با سی‌شارپ ساختم و این کار برای یادگیری مفاهیم پایهٔ پایتون و آشنایی با گیت و گیت‌هاب انجام شد.
