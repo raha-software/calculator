@@ -18,7 +18,7 @@ A simple command-line calculator written in Python — my first Python project. 
 
     Simple Calculator
     Available operations: +  -  *  /
-    Type 'exit' to quit.
+    Type 'q' or 'Q' to quit.
 
     Enter first number: 12
     Enter operation (+, -, *, /): *
