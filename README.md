@@ -21,8 +21,8 @@ A simple command-line calculator written in Python — my first Python project. 
     Type 'q' or 'Q' to quit.
 
     Enter first number: 12
-    Enter operation (+, -, *, /): *
     Enter second number: 3
+    Enter operation (+, -, *, /): *
     Result: 12 * 3 = 36
 
 ## Technologies
