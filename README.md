@@ -17,12 +17,12 @@ A simple command-line calculator written in Python — my first Python project. 
 ## Example Output
 
     Simple Calculator
-    Available operations: +  -  *  /
+    Available operations: +  -  *  / %
     Type 'q' or 'Q' to quit.
 
     Enter first number: 12
     Enter second number: 3
-    Enter operation (+, -, *, /): *
+    Enter operation (+, -, *, /, %): *
     Result: 12 * 3 = 36
 
 ## Technologies
