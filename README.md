@@ -86,7 +86,7 @@ GitHub: https://github.com/raha-software
 
 ---
 
-<div dir=“rtl”>
+<div dir="rtl">
 
 ## دربارهٔ این پروژه
 
