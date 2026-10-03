@@ -1,22 +1,35 @@
+import math
 def calculate(con_num_1, operator, con_num_2):
     if operator == "+":
         return con_num_1 + con_num_2
+    
     elif operator == "-":
         return con_num_1 - con_num_2
+    
     elif operator == "*":
         return con_num_1 * con_num_2
+    
     elif operator == "**":
         return con_num_1 ** con_num_2
+    
     elif operator == "/":
         return con_num_1 / con_num_2
+    
     elif operator == "%":
         return con_num_1 % con_num_2
     else:
-        return None 
+        return None
+
+def calculate_unary(con_num_1, operator):
+    if con_num_1 < 0:
+        return None
+    
+    if operator == "sqrt":
+        return math.sqrt(con_num_1) 
 
 
 def pretty(num):
-    if num.is_integer():
+    if isinstance(num, float) and num.is_integer():
         return int(num)
     return num 
 
@@ -44,6 +57,7 @@ def handle_commands(token):
         return "continue"
 
     if token in ("delete", "DELETE"):
+        
         if len(history) == 0:
             print("History is empty")
         else:
@@ -62,9 +76,16 @@ def handle_commands(token):
                     break
                 else:
                     print("This number doesn't exist! Please try again.")
-                break
         return "continue"
     return "not_command"
+
+
+def save_result(total):
+    try:
+        with open("file.txt", "a") as file: # This method—the `.txt` one—converts anything into a string.
+            file.write(f"{total}\n")
+    except OSError:
+        print("Could not write to file")
 
 
 history = []
@@ -79,23 +100,52 @@ while True:
     if pending_number is not None:
         num_1 = pending_number
         pending_number = None # And now, we clear this variable again.
+    
     elif box_number == None:
         num_1 = input("Please enter a number!")
         result = handle_commands(num_1)
+        
         if result == "continue":
             continue
+       
         if result == "quit":
             break
     else:
         num_1 = box_number
     
-    operator = input("What operator do you want?")
-    result_2 = handle_commands(operator)
-    if result_2 == "continue":
+    try:
+        con_num_1 = float(num_1)
+    except ValueError:
+        print("Entry is invalid!")
         continue
-    
-    if result_2 == "quit":
+
+    while True:
+        operator = input("What operator do you want?")
+        result_2 = handle_commands(operator)
+        if result_2 == "continue":
+            continue
+
+        if result_2 == "quit":
+            exit_program = True
+            break
         break
+
+    if exit_program:
+        break
+    
+    if operator == "sqrt":
+        result_unarray = calculate_unary(con_num_1, operator)
+       
+        if result_unarray is None:
+            print("Cannot calculate the square root of a negative number!")
+            continue
+
+        total = pretty(result_unarray)
+        box_number = total
+        print(total)
+        history.append(f"{pretty(con_num_1)} {operator} = {total}")
+        save_result(total)
+        continue
 
     try:
         float(operator)
@@ -110,41 +160,39 @@ while True:
 
     if pending_number != None:
         continue # Since this is outside the inner loop, it goes to the main loop first—specifically, to the point where it reads `pending_number` and sets the initial value.
-    
+        
     while True:
         num_2 = input("Please enter another number!") 
         result_3 = handle_commands(num_2)
         if result_3 == "continue":
             continue
+        
         if result_3 == "quit":
             exit_program = True
             break
         break
+
     if exit_program:
         break
 
     try:
-        con_num_1 = float(num_1)
+
         con_num_2 = float(num_2)
         total = calculate(con_num_1, operator, con_num_2)
-
         if total is None:
             print("Operator is invalid")
+            continue
         else:
             total = pretty(total)
             box_number = total
             print(total)
             history.append(f"{pretty(con_num_1)} {operator} {pretty(con_num_2)} = {total}")
-            con_total = str(total)
-            try:
-                with open("file.txt", "a") as file:
-                    file.write(f"{con_total}\n")
-            except OSError:
-                print("Could not write to file")
+            save_result(total)
 
     except ValueError:
             print("Entry is invalid!")
     except ZeroDivisionError:
         print("Cannot divide by zero!")
- 
+    except (OverflowError, AttributeError):
+        print("Error!")
 
