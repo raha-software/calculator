@@ -1,89 +1,135 @@
-# Simple Calculator (Python)
+# 🧮 Simple Calculator (Python)
 
-A simple command-line calculator written in Python — my first Python project. I previously built several projects in C#.
+A command-line calculator written in Python — my first Python project.
+I had previously built several projects in C#.
 
-## Features
+## ✨ Features
 
-- Basic operations: addition (+), subtraction (-), multiplication (*), division (/)
-- Extra operations: power (**) and modulo (%)
-- Continuous calculation (chaining): the previous result is reused as the next first operand
-- Numbered calculation history
-- Special commands available at any step: h, c, delete, q
+- Four basic operations: `+`  `-`  `*`  `/`
+- Extra operations: power `**` and modulo `%` and Square root`sqrt`
+- **Chaining** — the previous result is reused as the next first operand
+- **Numbered history** with the commands `h`, `c` and `delete`
 - Error handling: division by zero, invalid input, invalid operator
-- Saves each result to a text file
+- Every result is automatically appended to `file.txt`
 
-## Special Commands
+## 🕹️ Special Commands
+
+These work at **any** input step:
+
 | Command | Action |
-|---------|--------|
-| `h` / `H` | Show calculation history |
-| `c` / `C` | Clear all history |
-| `delete` / `DELETE` | Delete a specific item from history |
+| --- | --- |
+| `h` / `H` | Show the calculation history |
+| `c` / `C` | Clear the whole history |
+| `delete` / `DELETE` | Delete a single entry by its number |
 | `q` / `Q` | Quit the program |
 
-## How to Run
+## ▶️ How to Run
+```bash
+git clone https://github.com/raha-software/calculator.git
+cd calculator
+python calculator.py
 
-    git clone https://github.com/raha-software/calculator.git
-    cd calculator
-    python calculator.py
+## 🧾 Example Session
 
-## Example Output
-
-
-What operator do you want?*
-
-Please enter another number!3
-
+text
+Please enter a number! 12
+What operator do you want? *
+Please enter another number! 3
 36
+What operator do you want? +
+Please enter another number! 4
+40
+What operator do you want? h
+ 1. 12 * 3 = 36
+ 2. 36 + 4 = 40
+What operator do you want? q
+Goodbye
 
-What operator do you want?+
+The same results are also stored in `file.txt`:
 
-Please enter another number!4
-
+text
+36
 40
 
-What operator do you want?h
-
-12 * 3 = 36
-36 + 4 = 40
-What operator do you want?q
-
-Goodbye
-## Technologies
+## 🧠 Technologies
 
 - Python 3.x
 - Git & GitHub
 
-## What I Learned
+## 📚 What I Learned
 
-- Python functions, loops, conditionals, and lists
-- Error handling with try/except (ValueError, ZeroDivisionError, OSError)
-- Flow control: break/continue, exit flags, and state variables
-- File I/O (saving results)
-- Git workflow: init, add, commit, push
-- Creating a professional GitHub repository
+- Python functions, loops, conditionals and lists
+- Error handling with `try` / `except` (`ValueError`, `ZeroDivisionError`, `OSError`)
+- Flow control: `break`, `continue`, exit flags and state variables
+- File I/O (appending results to a text file)
+- Git workflow: `init`, `add`, `commit`, `push`
+- Writing a proper project README
 
+## 🗺️ Roadmap
 
-## Future Plans
+- [ ] **Refactor to object-oriented code** — separate responsibilities into dedicated classes (history, formatting, file writing, calculation core, user interface)
+- [ ] Add unit tests with `pytest`
+- [ ] Add a GUI with Tkinter
 
-- Add a GUI using Tkinter
-- Write unit tests with pytest
-- Add advanced operations (power, square root, percentage)
+## ⚠️ Known Limitations
 
-## Author
+Honest notes about the current single-file version — all of them are on the list for the next version:
 
-Raha — software engineering student and developer.
+- `file.txt` is written to the current working directory.
+- Inside the `delete` dialog there is no way to cancel; the program keeps asking until a valid number is entered.
+- `Ctrl+C` / `Ctrl+D` are not handled, so the program exits without a message.
+
+## 👩💻 Author
+
+**Raha** — software engineering student and developer
 GitHub: https://github.com/raha-software
+
+---
 
 ## دربارهٔ این پروژه
 
-این پروژه یک ماشین‌حساب ساده با پایتونه؛ اولین پروژهٔ پایتونیِ من.
-پیش از این چند پروژه با سی‌شارپ ساختم و این کار برای یادگیری مفاهیم پایهٔ پایتون و آشنایی با گیت و گیت‌هاب انجام شد.
+این پروژه یک ماشینحساب خط فرمان با پایتون است؛ اولین پروژهٔ پایتونی من.
+پیش از این چند پروژه با سیشارپ نوشته بودم و این کار برای یادگیری مفاهیم پایهٔ پایتون و آشنایی با گیت و گیتهاب انجام شد.
 
-امکانات
+### امکانات
 
-- چهار عمل اصلی: جمع، تفریق، ضرب، تقسیم
-- توان (**) و باقیمانده (%)
-- زنجیره‌سازی محاسبات (نتیجهٔ قبلی به‌عنوان عملوند بعدی)
-- تاریخچهٔ شماره‌گذاری‌شده با دستورهای h، c و delete
-- مدیریت خطاها: تقسیم بر صفر، ورودی نامعتبر و عملگر نامعتبر
-- ذخیره‌سازی خودکار نتایج در فایل متنی
+- چهار عمل اصلی: جمع (`+`)، تفریق (`-`)، ضرب (`*`)، تقسیم (`/`)
+- عملیات دیگر: توان (`**`) ، باقیمانده (`%`) ، جذر (`sqrt`)
+- زنجیرهسازی محاسبات؛ نتیجهٔ قبلی بهعنوان عملوند اولِ محاسبهٔ بعدی استفاده میشود
+- تاریخچهٔ شمارهگذاریشده همراه با دستورهای `h`، `c` و `delete`
+- مدیریت خطاها: تقسیم بر صفر، ورودی نامعتبر و عملگر ناشناس
+- ذخیرهٔ خودکار هر نتیجه در فایل متنی `file.txt`
+
+### دستورهای ویژه
+
+این دستورها در هر مرحله از برنامه کار میکنند:
+
+| دستور | کار |
+| --- | --- |
+| `h` / `H` | نمایش تاریخچهٔ محاسبات |
+| `c` / `C` | پاک کردن کل تاریخچه |
+| `delete` / `DELETE` | حذف یک عضو مشخص از تاریخچه با شمارهٔ آن |
+| `q` / `Q` | خروج از برنامه |
+
+### اجرا
+
+bash
+git clone https://github.com/raha-software/calculator.git
+cd calculator
+python calculator.py
+
+### نقشهٔ راه
+
+- [ ] بازنویسی کد با ساختار شیءگرا و تفکیک مسئولیتها در کلاسهای جداگانه
+- [ ] نوشتن تستهای واحد با `pytest`
+- [ ] افزودن رابط گرافیکی با Tkinter
+
+### محدودیتهای نسخهٔ فعلی
+
+- فایل `file.txt` در پوشهٔ جاری ساخته میشود.
+- در دیالوگ `delete` راهی برای لغو وجود ندارد و برنامه تا وارد کردن یک شمارهٔ معتبر ادامه میدهد.
+- ترکیب کلیدهای `Ctrl+C` و `Ctrl+D` مدیریت نشده است.
+
+این موارد در نسخهٔ بعدی (نسخهٔ شیءگرا) برطرف میشوند.
+`
+
