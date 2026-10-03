@@ -6,7 +6,7 @@ I had previously built several projects in C#.
 ## Features
 
 - Four basic operations: `+`  `-`  `*`  `/`
-- Extra operations: power `**` and modulo `%` and Square root`sqrt`
+- Extra operations: power `**` and modulo `%` and Square root `sqrt`
 - **Chaining** — the previous result is reused as the next first operand
 - **Numbered history** with the commands `h`, `c` and `delete`
 - Error handling: division by zero, invalid input, invalid operator
@@ -86,6 +86,8 @@ GitHub: https://github.com/raha-software
 
 ---
 
+<div dir=“rtl”>
+
 ## دربارهٔ این پروژه
 
 این پروژه یک ماشینحساب خط فرمان با پایتون است؛ اولین پروژهٔ پایتونی من.
@@ -132,4 +134,4 @@ python calculator.py
 
 این موارد در نسخهٔ بعدی (نسخهٔ شیءگرا) برطرف میشوند.
 
-
+</div>
