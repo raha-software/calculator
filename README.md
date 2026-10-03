@@ -1,9 +1,9 @@
-# 🧮 Simple Calculator (Python)
+# Simple Calculator (Python)
 
 A command-line calculator written in Python — my first Python project.
 I had previously built several projects in C#.
 
-## ✨ Features
+## Features
 
 - Four basic operations: `+`  `-`  `*`  `/`
 - Extra operations: power `**` and modulo `%` and Square root`sqrt`
@@ -12,7 +12,7 @@ I had previously built several projects in C#.
 - Error handling: division by zero, invalid input, invalid operator
 - Every result is automatically appended to `file.txt`
 
-## 🕹️ Special Commands
+## Special Commands
 
 These work at **any** input step:
 
@@ -24,12 +24,12 @@ These work at **any** input step:
 | `q` / `Q` | Quit the program |
 
 ## ▶️ How to Run
-```bash
+```bash```
 git clone https://github.com/raha-software/calculator.git
 cd calculator
 python calculator.py
 
-## 🧾 Example Session
+## Example Session
 
 text
 Please enter a number! 12
@@ -51,12 +51,12 @@ text
 36
 40
 
-## 🧠 Technologies
+## Technologies
 
 - Python 3.x
 - Git & GitHub
 
-## 📚 What I Learned
+## What I Learned
 
 - Python functions, loops, conditionals and lists
 - Error handling with `try` / `except` (`ValueError`, `ZeroDivisionError`, `OSError`)
@@ -65,13 +65,13 @@ text
 - Git workflow: `init`, `add`, `commit`, `push`
 - Writing a proper project README
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] **Refactor to object-oriented code** — separate responsibilities into dedicated classes (history, formatting, file writing, calculation core, user interface)
 - [ ] Add unit tests with `pytest`
 - [ ] Add a GUI with Tkinter
 
-## ⚠️ Known Limitations
+## Known Limitations
 
 Honest notes about the current single-file version — all of them are on the list for the next version:
 
@@ -79,7 +79,7 @@ Honest notes about the current single-file version — all of them are on the li
 - Inside the `delete` dialog there is no way to cancel; the program keeps asking until a valid number is entered.
 - `Ctrl+C` / `Ctrl+D` are not handled, so the program exits without a message.
 
-## 👩💻 Author
+## Author
 
 **Raha** — software engineering student and developer
 GitHub: https://github.com/raha-software
@@ -131,5 +131,5 @@ python calculator.py
 - ترکیب کلیدهای `Ctrl+C` و `Ctrl+D` مدیریت نشده است.
 
 این موارد در نسخهٔ بعدی (نسخهٔ شیءگرا) برطرف میشوند.
-`
+
 
